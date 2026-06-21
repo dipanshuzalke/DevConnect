@@ -41,7 +41,7 @@ function EditorPage () {
 
   const socketRef = useRef(null)
 
-  useEffect((username) => {
+  useEffect(() => {
     const init = async () => {
       socketRef.current = await initSocket()
       socketRef.current.on('connect_error', err => handleErrors(err))
