@@ -40,7 +40,7 @@ function Editor({ socketRef, roomId, onCodeChange }) {
     };
 
     init();
-  }, []);
+  }, [ socketRef, roomId, onCodeChange]);
 
   // data receive from server
   useEffect(() => {
