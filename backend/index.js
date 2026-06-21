@@ -68,6 +68,18 @@ io.on("connection", (socket) => {
     });
   });
 
+  io.on("connection", (socket) => {
+  console.log("CONNECTED:", socket.id);
+
+  socket.on("disconnect", (reason) => {
+    console.log("DISCONNECTED:", socket.id, reason);
+  });
+
+  socket.on("error", (err) => {
+    console.log("SOCKET ERROR:", err);
+  });
+});
+
   // sync the code
   socket.on(ACTIONS.CODE_CHANGE, ({ roomId, code }) => {
     socket.in(roomId).emit(ACTIONS.CODE_CHANGE, { code });
@@ -102,7 +114,7 @@ app.post("/compile", async (req, res) => {
       language: language,
       versionIndex: languageConfig[language].versionIndex,
       clientId: process.env.jDoodle_clientId,
-      clientSecret: process.env.kDoodle_clientSecret,
+      clientSecret: process.env.jDoodle_clientSecret,
     });
 
     res.json(response.data);
