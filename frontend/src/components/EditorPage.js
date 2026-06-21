@@ -149,14 +149,7 @@ function EditorPage() {
     <div className="container-fluid vh-100 d-flex flex-column">
       <div className="row flex-grow-1">
         {/* Client panel */}
-        <div className="col-md-2 bg-dark text-light d-flex flex-column">
-          <img
-            src="/images/codecast.png"
-            alt="Logo"
-            className="img-fluid mx-auto"
-            style={{ maxWidth: "150px", marginTop: "-43px" }}
-          />
-          <hr style={{ marginTop: "-3rem" }} />
+        <div className="col-md-2 bg-dark text-light d-flex flex-column pt-3">
 
           {/* Client list container */}
           <div className="d-flex flex-column flex-grow-1 overflow-auto">
@@ -174,13 +167,6 @@ function EditorPage() {
             </button>
             <button className="btn btn-danger w-100 mb-2" onClick={leaveRoom}>
               Leave Room
-            </button>
-            {/* Chatbot Button */}
-            <button
-              className="btn btn-info w-100"
-              // onClick={openChatbot}
-            >
-              Open Chatbot
             </button>
           </div>
         </div>

@@ -25,11 +25,6 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto d-flex align-items-center gap-3">
             <SignedIn>
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/create-room">
-                  Create New Room
-                </Link>
-              </li>
-              <li className="nav-item">
                 <UserButton />
               </li>
             </SignedIn>
